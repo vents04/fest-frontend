@@ -1,0 +1,53 @@
+.navbar{
+    background-color: #477d7f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    box-shadow: 0px 0px 10px #777;
+
+    .navbar-topbar {
+        padding: 2rem 1.5rem;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navbar-icon {
+        color: white;
+        font-size: 1.75rem;
+    }
+
+    .navbar-logo {
+        font-family: 'Metropolis Bold', sans-serif;
+        font-size: 1.25rem;
+        color: white;
+        text-align: center;
+    }
+
+    .navbar-dropdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        margin-bottom: 0rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+
+    .navbar-dropdown-item { 
+        padding: 0.5rem 0rem;
+        font-family: 'Metropolis Regular', sans-serif;
+        font-size: 1rem;
+        color: white;
+        width: 100%;
+        text-align: center;
+    }
+
+    .active-item {
+        background-color: #64bd97;
+    }
+
+}

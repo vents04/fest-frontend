@@ -11,9 +11,16 @@ import { AuthService } from './service/auth.service';
 export class AppComponent {
   title = 'fest-frontend';
   showNavbar: boolean = false;
+  showDropdown: boolean = false;
+  selectedComponent: string = "home";
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
     this.showNavbar = this.authService.checkToken()
+  }
+
+  openComponent(component: string) {
+    this.router.navigate([`/${component}`]);
+    this.selectedComponent = component;
   }
 
 }
