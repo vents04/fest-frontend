@@ -1,0 +1,100 @@
+.page {
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/3408012.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.centered-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.modal-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 20vw;
+    box-shadow: 0px 0px 15px black;
+}
+.modal-title {
+    font-family: 'Metropolis Bold', sans-serif;
+    color: black;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.modal-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    input {
+        background-color: white;
+        border: 1px solid #e7e7e7;
+        border-radius: 3px;
+        font-family: 'Metropolis Regular', sans-serif;
+        font-size: 1rem;
+        color: black;
+        padding: 0.75rem;
+        margin-top: 1rem;
+
+        &:hover {
+            cursor: text;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    input:first-of-type {
+        margin-top: 0px !important;
+    }
+
+}
+
+.modal-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.action-button {
+    margin-bottom: 1rem;
+}
+
+.modal-bottom-link {
+    color: #21e6c1;
+    font-family: 'Metropolis SemiBold', sans-serif;
+    font-size: 1rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .modal-box {
+        width: 100vw;
+        border-radius: 0px;
+    }
+}
+
+.navbar-topbar { 
+    display: none;
+}
