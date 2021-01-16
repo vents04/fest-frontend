@@ -16,22 +16,28 @@
     src: url('/assets/fonts/Metropolis/Metropolis-Bold.otf');
 }
 
+$primary: #29a19c;
+$secondary: #a3f7bf;
+$main-text-color: white;
+$bold-font-family: 'Metropolis Bold', sans-serif;
+$regular-font-family: 'Metropolis Regular', sans-serif;
+$medium-font-family: 'Metropolis SemiBold', sans-serif;
+
 .action-button {
     border-radius: 3px;
     border: none;
-    background-color: #21e6c1;
-    font-family: 'Metropolis Bold', sans-serif;
+    background-color: $primary;
+    font-family: $bold-font-family;
     font-size: 1rem;
     padding: 0.25rem 1.5rem;
-    color: white;
+    color: $main-text-color;
 
     &:hover {
         cursor: pointer;
-        color: white;
+        color: $main-text-color;
     }
     
     &:focus {
-        box-shadow: 0px 0px 0px 2px #1ed9b5;
-        color: white;
+        color: $main-text-color;
     }
 }

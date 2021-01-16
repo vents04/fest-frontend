@@ -1,12 +1,18 @@
-<div class="navbar" *ngIf="showNavbar">
+<div class="navbar mobile-navbar" *ngIf="showNavbar && isMobile">
     <div class="navbar-topbar">
         <i class="material-icons navbar-icon navbar-menu-icon" (click)="showDropdown = !showDropdown">menu</i>
-        <p class="navbar-logo">Orphic</p>
-        <i class="material-icons navbar-icon navbar-profile-icon">account_circle</i>
+        <p class="navbar-logo">Nighthawk</p>
+        <i class="material-icons navbar-icon navbar-profile-icon" (click)="openComponent('profile')">account_circle</i>
     </div>
     <div class="navbar-dropdown" *ngIf="showDropdown">
-        <p class="navbar-dropdown-item" [ngClass]="{'active-item' : selectedComponent == 'home'}" (click)="openComponent('home')">Home</p>
-        <p class="navbar-dropdown-item" [ngClass]="{'active-item' : selectedComponent == 'about-us'}" (click)="openComponent('about-us')">About us</p>
+        <p class="navbar-dropdown-item" [ngClass]="{'active-item' : selectedComponent == 'dashboard'}" (click)="openComponent('dashboard')">Home</p>
+    </div>
+</div>
+<div class="navbar desktop-navbar" *ngIf="showNavbar && isDesktop">
+    <p class="navbar-logo">Nighthawk</p>
+    <div class="navbar-menu-desktop">
+        <p class="navbar-menu-item" [ngClass]="{'active-menu-item' : selectedComponent == 'dashboard'}" (click)="openComponent('dashboard')">Dashboard</p>
+        <i class="material-icons navbar-icon navbar-profile-icon" (click)="openComponent('profile')">account_circle</i>
     </div>
 </div>
 <router-outlet></router-outlet>
