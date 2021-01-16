@@ -12,7 +12,14 @@ export class AppComponent {
   title = 'fest-frontend';
   showNavbar: boolean = false;
   showDropdown: boolean = false;
-  selectedComponent: string = "home";
+  selectedComponent: string = "dashboard";
+
+  isMobile: boolean = false;
+  isDesktop: boolean = false;
+
+  ngOnInit(): void {
+    this.setDeviceType();
+  }
 
   constructor(private authService: AuthService, private router: Router) {
     this.showNavbar = this.authService.checkToken()
@@ -21,6 +28,11 @@ export class AppComponent {
   openComponent(component: string) {
     this.router.navigate([`/${component}`]);
     this.selectedComponent = component;
+  }
+
+  setDeviceType() {
+    if(screen.width < 768) this.isMobile = true;
+    else this.isDesktop = true;
   }
 
 }

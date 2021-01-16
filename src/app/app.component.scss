@@ -1,10 +1,40 @@
-.navbar{
-    background-color: #477d7f;
+@import '../styles.scss';
+
+$navbar-background-color:  $primary;
+$navbar-active-item-background-color: $secondary;
+$navbar-text-color: $main-text-color;
+
+.navbar-logo {
+    font-family: $bold-font-family;
+    font-size: 1.25rem;
+    color: $navbar-text-color;
+    text-align: center;
+}
+
+.navbar {
+    box-shadow: 0px 0px 10px #777;;
+}
+
+.navbar-icon {
+    color: $navbar-text-color;
+    font-size: 1.75rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+}
+
+.mobile-navbar {
+    background-color: $navbar-background-color;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    box-shadow: 0px 0px 10px #777;
 
     .navbar-topbar {
         padding: 2rem 1.5rem;
@@ -12,18 +42,6 @@
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    .navbar-icon {
-        color: white;
-        font-size: 1.75rem;
-    }
-
-    .navbar-logo {
-        font-family: 'Metropolis Bold', sans-serif;
-        font-size: 1.25rem;
-        color: white;
-        text-align: center;
     }
 
     .navbar-dropdown {
@@ -39,15 +57,56 @@
 
     .navbar-dropdown-item { 
         padding: 0.5rem 0rem;
-        font-family: 'Metropolis Regular', sans-serif;
+        font-family: $regular-font-family;
         font-size: 1rem;
-        color: white;
+        color: $navbar-text-color;
         width: 100%;
         text-align: center;
     }
 
     .active-item {
-        background-color: #64bd97;
+        background-color: $navbar-active-item-background-color;
+    }
+
+}
+
+.desktop-navbar {
+    background-color: $navbar-background-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+
+    .navbar-menu-desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        
+        * {
+            margin-left: 2rem;
+        }
+
+    }
+
+    .navbar-menu-item {
+        font-family: $bold-font-family;
+        font-size: 1rem;
+        color: $navbar-text-color;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+    }
+
+    .active-menu-item {
+        text-decoration: underline;
     }
 
 }

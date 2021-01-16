@@ -53,13 +53,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "1mb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "5mb"
                 }
               ]
             }
@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "fest-frontend"
+  "defaultProject": "fest-frontend",
+  "cli": {
+    "analytics": "f83af352-7f47-4f91-9508-b999de22e065"
+  }
 }
