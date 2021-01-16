@@ -1,1 +1,41 @@
-<p>dashboard works!</p>
+<div class="page">
+    <div class="main-section">
+        <p class="main-section-title">Dashboard</p>
+        <div class="main-section-contents">
+            <div class="columns">
+                <div class="column is-5 url" *ngFor="let url of urls">
+                    <div class="url-topbar">
+                        <div class="url-topbar-left">
+                            <div class="url-favicon" *ngIf="url.favicon == ''" style="background-image: url('../../../assets/3408012.jpg');"></div>
+                            <div class="url-favicon" *ngIf="url.favicon != ''" style="background-image: url('../../../assets/{{url.favicon}}');"></div>
+                            <div class="url-info">
+                                <p class="url-title">{{url.title}}</p>
+                                <p class="url-url">{{url.url}}</p>
+                            </div>
+                        </div>
+                        <div class="url-topbar-right">
+                            <p class="url-period">{{url.period}}</p>
+                            <i class="fas fa-star url-star" [ngClass]="{'checked' : url.favorites}"></i>
+                        </div>
+                    </div>
+                    <div class="logs-section">
+                        <div class="logs-title">Logs</div>
+                        <div class="logs" [ngClass]="{'scrollable-logs' : url.logs.length > 3}">
+                            <div class="log" *ngFor="let log of url.logs">
+                                <div class="log-right">
+                                    <p class="log-status" [ngClass]="{'log-status-1' : log.status.toString()[0] == 1,
+                                                                      'log-status-2' : log.status.toString()[0] == 2,
+                                                                      'log-status-3' : log.status.toString()[0] == 3,
+                                                                      'log-status-4' : log.status.toString()[0] == 4,
+                                                                      'log-status-5' : log.status.toString()[0] == 5}">{{log.status}}</p>
+                                    <p class="log-text">{{log.text}}</p>
+                                </div>
+                                <p class="log-date">{{log.dateAndTime}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

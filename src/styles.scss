@@ -18,7 +18,8 @@
 
 $primary: #29a19c;
 $secondary: #a3f7bf;
-$main-text-color: white;
+$text-color-dark-background: white;
+$text-color-light-background: black;
 $bold-font-family: 'Metropolis Bold', sans-serif;
 $regular-font-family: 'Metropolis Regular', sans-serif;
 $medium-font-family: 'Metropolis SemiBold', sans-serif;
@@ -30,14 +31,36 @@ $medium-font-family: 'Metropolis SemiBold', sans-serif;
     font-family: $bold-font-family;
     font-size: 1rem;
     padding: 0.25rem 1.5rem;
-    color: $main-text-color;
+    color: $text-color-dark-background;
 
     &:hover {
         cursor: pointer;
-        color: $main-text-color;
+        color: $text-color-dark-background;
     }
     
     &:focus {
-        color: $main-text-color;
+        color: $text-color-dark-background;
     }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 1px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #777;
+    border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
