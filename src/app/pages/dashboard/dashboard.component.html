@@ -14,13 +14,17 @@
                             </div>
                         </div>
                         <div class="url-topbar-right">
-                            <p class="url-period">{{url.period}}</p>
                             <i class="fas fa-star url-star" [ngClass]="{'checked' : url.favorites}"></i>
+                            <p class="url-edit">Edit</p>
                         </div>
                     </div>
                     <div class="logs-section">
-                        <div class="logs-title">Logs</div>
-                        <div class="logs" [ngClass]="{'scrollable-logs' : url.logs.length > 3}">
+                        <div class="logs-section-topbar">
+                            <p class="logs-title">Logs</p>
+                            <p class="url-period">{{url.period}}</p>
+                        </div>
+                        <p class="description" *ngIf="url.logs.length == 0">No logs to preview yet.</p>
+                        <div class="logs"  *ngIf="url.logs.length > 0" [ngClass]="{'scrollable-logs' : url.logs.length > 3}">
                             <div class="log" *ngFor="let log of url.logs">
                                 <div class="log-right">
                                     <p class="log-status" [ngClass]="{'log-status-1' : log.status.toString()[0] == 1,

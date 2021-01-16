@@ -51,11 +51,7 @@ export class DashboardComponent implements OnInit {
       "period": "5min",
       "favorites": true,
       "logs" : [
-        {
-          "status": 200,
-          "text": "Success",
-          "dateAndTime": "20-20-2020"
-        }
+        
       ]
     },
     {
