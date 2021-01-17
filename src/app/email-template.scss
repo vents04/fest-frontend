@@ -1,0 +1,61 @@
+@import '../../../styles.scss';
+
+.page{
+    width: 50vw;
+    height: 50vh;
+    transform: translateX(50%);
+    margin-top: 2rem;
+}
+.top-section{
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $primary;
+}
+
+.title{
+    font-family: $bold-font-family;
+    font-size: 1.5rem;
+    color: $text-color-dark-background;
+    margin: 0rem !important;
+}
+.logo-section{
+    width: 50px;
+    height: 60px;
+    background-image: url('../../../assets/hawk_white.png');
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    margin: -1rem 1rem;;
+}
+.main-content{
+    padding: 1rem;
+    background-color: #fafafa;
+}
+.message-title{
+    font-family: $bold-font-family;
+    font-size: 1.75rem;
+    color: $text-color-light-background;
+    margin: 1rem 0rem;;
+}
+.message-description{
+    font-family: $bold-font-family;
+    font-size: 1rem;
+    color: $text-color-light-background;
+}
+.bottom-content{
+    font-family: $regular-font-family;
+    font-size: 0.75rem;
+}
+.verify-email-button{
+    font-family: $regular-font-family;
+    font-size: 1.25rem;
+    color: $text-color-dark-background;
+    background-color: $primary;
+    padding: 1rem;
+    margin: 1rem 0rem;
+    border-radius: 5px;
+    border: none;
+}
