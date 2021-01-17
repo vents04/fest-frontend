@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WebRequestsService } from 'src/app/services/web-requests-service/web-requests.service';
 import { HttpResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,7 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private webService: WebRequestsService) { }
+  constructor(private webService: WebRequestsService, ) { }
 
   monitoredWebsites: Array<Object> = [];
 
@@ -155,4 +156,7 @@ export class DashboardComponent implements OnInit {
     logModal.classList.remove("is-active");
   }
 
+  redirect(id: string){
+    this.router.navigate(['/dashboard'])
+  }
 }
