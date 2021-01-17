@@ -19,7 +19,7 @@ export class WebReqInterceptor  implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         console.log("here");
         if(error.statusText === 'Unknown Error' || error.status === 500 || error.status === 0){
-          this.router.navigate(['/unknown-error']); 
+          //this.router.navigate(['/unknown-error']); 
         }
         return throwError(error);
       })

@@ -1,4 +1,6 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { UrlService } from 'src/app/service/url-service/url.service';
 
 @Component({
   selector: 'app-add-url',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddUrlComponent implements OnInit {
 
-  constructor() { }
+  constructor(private urlService: UrlService) { }
 
   keyPlacehodler: string = "Key...";
   valuePlacehodler: string = "Value...";
@@ -16,6 +18,8 @@ export class AddUrlComponent implements OnInit {
   showCustomInput: boolean = false;
 
   headersCount: number = 0;
+
+  showRequestBody: boolean = false;
 
   ngOnInit(): void {
     this.addHeadersElement();
@@ -59,8 +63,22 @@ export class AddUrlComponent implements OnInit {
     console.log(id);
   }
 
+  methodUpdated(method: string){
+    (method == 'post' || method == 'put' || method == 'delete') ? this.showRequestBody = true : this.showRequestBody = false;
+  }
+
   addUrl() {
-    
+    let body = '';
+    const title = (document.getElementById('title') as HTMLInputElement).value;
+    const url = (document.getElementById('url') as HTMLInputElement).value;
+    const method = (document.getElementById('method') as HTMLInputElement).value;
+    const contentType = (document.getElementById('contentType') as HTMLInputElement).value;
+    if (method != 'get') body = (document.getElementById('body') as HTMLInputElement).value;
+    const period = (document.getElementById('period') as HTMLInputElement).value;
+
+    this.urlService.addURL(title, url, method, contentType, body, parseInt(period)).subscribe((res: HttpResponse<any>) => {
+
+    })
   }
 
 }
