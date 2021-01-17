@@ -16,33 +16,39 @@ export class AuthService {
   } 
 
   getAuthToken(){
-    return localStorage.getItem('x-auth-token');
+    return localStorage.getItem('Authorization');
   }
 
   checkToken(){
-    return this.http.get(`${this.ROOT_URL}/user/read/check-token`, { observe: 'response', responseType: 'text' });
+    return this.http.get(`${this.ROOT_URL}/users`, { observe: 'response', responseType: 'text' });
   }
 
   setAuthToken(authToken: string){
-    localStorage.setItem('x-auth-token', authToken);
+    localStorage.setItem('Authorization', authToken);
   }
 
   login(email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/user/create/login`, { email, password }, { observe: 'response', responseType: 'text' }).pipe(
+    return this.http.post(`${this.ROOT_URL}/user/login`, { email, password }, { observe: 'response', responseType: 'text' }).pipe(
       shareReplay(), tap((res: HttpResponse<any>) => {
-        // Set token
-        let token = res.body;
-        this.setToken(token != null ? token : "NoTokenFound");
+        try{
+          let token = JSON.parse(res.body).access_token;
+          token != null ? this.setToken(token) : console.log("log in failed.");
+        }catch(err){
+          // error modal //
+        }
       })
     );
   }
 
   signup(name: string, email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/user/create/signup`, { name, email, password }, { observe: 'response', responseType: 'text' }).pipe(
+    return this.http.post(`${this.ROOT_URL}/user`, { name, email, password }, { observe: 'response', responseType: 'text' }).pipe(
       shareReplay(), tap((res: HttpResponse<any>) => {
-        // Set token
-        let token = res.body;
-        this.setToken(token != null ? token : "NoTokenFound");
+        try{
+          let token = JSON.parse(res.body).access_token;
+          token != null ? this.setToken(token) : console.log("log in failed.");
+        }catch(err){
+          // error modal //
+        }
       })
     );
   }
@@ -53,10 +59,10 @@ export class AuthService {
   }
 
   private setToken(authToken: string){
-    localStorage.setItem("x-auth-token", authToken);
+    localStorage.setItem("Authorization", authToken);
   }
 
   private removeToken(){
-    localStorage.removeItem("x-auth-token");
+    localStorage.removeItem("Authorization");
   }
 }

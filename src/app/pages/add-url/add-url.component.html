@@ -2,7 +2,63 @@
     <div class="main-section">
         <p class="main-section-title">Add URL</p>
         <div class="main-section-contents">
-
+            <div class="min-section">
+                <p class="min-section-title">Title</p>
+                <input type="text" placeholder="Type here..." class="add-url-input" />
+            </div>
+            <div class="min-section">
+                <p class="min-section-title">URL</p>
+                <input type="text" placeholder="Type here..." class="add-url-input" />
+            </div>
+            <div class="min-section">
+                <p class="min-section-title">Method</p>
+                <select class="add-url-input">
+                    <option value="get" selected>GET</option>
+                    <option value="post">POST</option>
+                    <option value="put">PUT</option>
+                    <option value="delete">DELETE</option>
+                </select>
+            </div>
+            <div class="min-section" id="headers-section">
+                <p class="min-section-title">Headers</p>
+                <button class="button action-button" (click)="addHeadersElement()">Add Key/Value</button>
+            </div>
+            <div class="min-section">
+                <p class="min-section-title">Payload / Request body</p>
+                <select class="add-url-input">
+                    <option value="json">JSON</option>
+                    <option value="text">Text</option>
+                </select>
+                <br/>
+                <textarea class="add-url-input add-url-textarea"></textarea>
+            </div>
+            <div class="min-section">
+                <p class="min-section-title">Period between requests</p>
+                <select class="add-url-input">
+                    <option value="60000">1 min</option>
+                    <option value="180000">3 min</option>
+                    <option value="300000">5 min</option>
+                    <option value="600000">10 min</option>
+                    <option value="1800000">30 min</option>
+                    <option value="3600000">1 h</option>
+                </select>
+                <br/>
+                <p class="primary-text" (click)="showCustomInput = !showCustomInput">Want custom period?</p>
+                <div class="min-section-double-input" *ngIf="showCustomInput">
+                    <input class="add-url-input" type="number" placeholder="Custom period..."/>
+                    <select class="add-url-input">
+                        <option value="milliseconds">Milliseconds</option>
+                        <option value="seconds">Seconds</option>
+                        <option value="minutes">Minutes</option>
+                        <option value="hours">Hours</option>
+                        <option value="days">Days</option>
+                        <option value="months">Months</option>
+                    </select>
+                </div>
+            </div>
+            <div class="min-section">
+                <button class="button action-button">Add URL</button>
+            </div>
         </div>
     </div>
 </div>
