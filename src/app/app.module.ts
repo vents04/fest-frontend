@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddUrlComponent } from './pages/add-url/add-url.component';
 import { UrlComponent } from './pages/url/url.component';
+import { UnknowErrorComponent } from './pages/unknow-error/unknow-error.component';
+import { WebReqInterceptor } from './services/web-req.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,17 @@ import { UrlComponent } from './pages/url/url.component';
     SignupComponent,
     DashboardComponent,
     AddUrlComponent,
-    UrlComponent
+    UrlComponent,
+    UnknowErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

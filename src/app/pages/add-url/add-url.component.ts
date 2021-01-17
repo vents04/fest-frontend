@@ -59,4 +59,8 @@ export class AddUrlComponent implements OnInit {
     console.log(id);
   }
 
+  addUrl() {
+    
+  }
+
 }

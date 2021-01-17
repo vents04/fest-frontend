@@ -14,19 +14,16 @@ export class WebReqInterceptor  implements HttpInterceptor {
   constructor(private authService: AuthService, private router: Router) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler):Observable<any> {
-    if(request.url.indexOf("/users/signup") < 0){  
     request = this.addAuthHeader(request);
-      return next.handle(request).pipe(
-        catchError((error: HttpErrorResponse) => {
-          if(error.statusText === 'Unknown Error' || error.status === 500){
-            this.router.navigate(['/unknown-error']); 
-          }
-          return throwError(error);
-        })
-      )
-    }else{
-      return next.handle(request);
-    }
+    return next.handle(request).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.log("here");
+        if(error.statusText === 'Unknown Error' || error.status === 500 || error.status === 0){
+          this.router.navigate(['/unknown-error']); 
+        }
+        return throwError(error);
+      })
+    )
   }
 
   addAuthHeader(request: HttpRequest<any>){
