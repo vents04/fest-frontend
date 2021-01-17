@@ -27,21 +27,21 @@ export class AuthService {
     localStorage.setItem('Authorization', authToken);
   }
 
-  login(email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/user/login`, { email, password }, { observe: 'response', responseType: 'text' }).pipe(
+  login(username: string, password: string) {
+    return this.http.post(`${this.ROOT_URL}/user/login`, { username, password }, { observe: 'response', responseType: 'text' }).pipe(
       shareReplay(), tap((res: HttpResponse<any>) => {
         try{
           let token = JSON.parse(res.body).access_token;
           token != null ? this.setToken(token) : console.log("log in failed.");
         }catch(err){
-          // error modal //
+          console.log(err);
         }
       })
     );
   }
 
-  signup(name: string, email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/user`, { name, email, password }, { observe: 'response', responseType: 'text' }).pipe(
+  signup(username: string, email: string, password: string) {
+    return this.http.post(`${this.ROOT_URL}/user`, { username, email, password }, { observe: 'response', responseType: 'text' }).pipe(
       shareReplay(), tap((res: HttpResponse<any>) => {
         try{
           let token = JSON.parse(res.body).access_token;

@@ -3,11 +3,11 @@
         <div class="modal-box">
             <p class="modal-title">Login</p>
             <div class="modal-input">
-                <input type="email" placeholder="email:" #email />
+                <input type="text" placeholder="username:" #username />
                 <input type="password" placeholder="password:" #password />
             </div>
             <div class="modal-bottom">
-                <button class="action-button button">Submit</button>
+                <button class="action-button button" id="submit-button" (click)="sendLogRequest(username.value, password.value)">Submit</button>
                 <p class="modal-bottom-link" [routerLink]="['/signup']">Go to Signup</p>
             </div>
         </div>

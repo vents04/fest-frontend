@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private webService: WebRequestsService, ) { }
+  constructor(private webService: WebRequestsService,private router: Router) { }
 
   monitoredWebsites: Array<Object> = [];
 

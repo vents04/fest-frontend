@@ -5,7 +5,7 @@
         <i class="material-icons navbar-icon navbar-profile-icon" (click)="openProfileModal()">account_circle</i>
     </div>
     <div class="navbar-dropdown" *ngIf="showDropdown">
-        <p class="navbar-dropdown-item" [ngClass]="{'active-item' : selectedComponent == 'dashboard'}" (click)="openComponent('dashboard')">Home</p>
+        <p class="navbar-dropdown-item" [ngClass]="{'active-item' : selectedComponent == 'dashboard'}" (click)="openComponent('dashboard')">Dashboard</p>
     </div>
 </div>
 <div class="navbar desktop-navbar" *ngIf="showNavbar && isDesktop">
@@ -17,7 +17,7 @@
 </div>
 <div class="modal" id="profile-modal">
     <div class="modal-background"></div>
-    <div class="modal-card">
+    <div class="modal-card" [ngClass]="{'modal-mobile' : isMobile}">
         <div class="modal-section">
             <i class="material-icons close-button" (click)="closeProfileModal()">cancel</i>
             <p class="modal-title">Profile</p>
