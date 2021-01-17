@@ -1,0 +1,61 @@
+<div class="page">
+    <div class="modal is-active" id="log-modal" *ngIf="showLogModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <div class="modal-section">
+                <i class="material-icons close-button" (click)="closeLogModal()">cancel</i>
+                <p class="modal-title">Log</p>
+            </div>
+            <div class="modal-contents">
+                <p class="modal-url">{{openedLog.url}} <span class="modal-method"> {{openedLog.method}} </span></p>
+                <p class="modal-date">{{openedLog.dateAndTime}}</p>
+                <p class="modal-time-to-complete">{{openedLog.timeToComplete}}</p>
+                <div class="modal-log-info">
+                    <p class="modal-log-info-item">Status code: <span class="modal-log-status-value" [ngClass]="{'log-status-1' : openedLog.status.toString()[0] == 1,
+                        'log-status-2' : openedLog.status.toString()[0] == 2,
+                        'log-status-3' : openedLog.status.toString()[0] == 3,
+                        'log-status-4' : openedLog.status.toString()[0] == 4,
+                        'log-status-5' : openedLog.status.toString()[0] == 5}">{{openedLog.status}} {{statusCodeTexts.get(openedLog.status)}}</span></p>
+                    <p class="modal-log-info-item">Response: <span class="modal-log-info-item-value">{{openedLog.text}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-section">
+        <div class="top-section">
+            <p class="url-title" contentEditable="true">{{currentObject.title}}</p>
+            <p class="url-last-log">Last log: {{currentObject.lastLog}}</p>
+        </div>
+        <div class="main-secion">
+            <p class="url-url">{{currentObject.url}}</p>
+            <p class="url-method">{{currentObject.method}}</p>
+            <div class="method-params">
+                <p class="sub-title">Body</p>
+                <p class="url-method-body">{{currentObject.methodBody}}</p>
+                <div class="logs-section">
+                    <div class="logs-section-topbar">
+                        <p class="logs-title">Logs</p>
+                        <p class="url-period">{{currentObject.period}}</p>
+                    </div>
+                    <p class="description" *ngIf="currentObject.logs.length == 0">No logs to preview yet.</p>
+                    <div class="logs"  *ngIf="currentObject.logs.length > 0" [ngClass]="{'scrollable-logs' : currentObject.logs.length > 3}">
+                        <div class="log" *ngFor="let log of currentObject.logs" id="{{log.Id}}" (click)="openLogModal(logEl.id)" #logEl>
+                            <div class="log-right">
+                                <p class="log-status" [ngClass]="{'log-status-1' : log.status.toString()[0] == 1,
+                                                                  'log-status-2' : log.status.toString()[0] == 2,
+                                                                  'log-status-3' : log.status.toString()[0] == 3,
+                                                                  'log-status-4' : log.status.toString()[0] == 4,
+                                                                  'log-status-5' : log.status.toString()[0] == 5}">{{log.status}}</p>
+                                <p class="log-text">{{log.text}}</p>
+                            </div>
+                            <p class="log-date">{{log.dateAndTime}}</p>
+                        </div>
+                    </div>
+                </div>>
+            </div>
+        </div>
+        <div class="response">
+            <p class="url-response">{{currentObject.resoponse}}</p>
+        </div>
+    </div>
+</div>

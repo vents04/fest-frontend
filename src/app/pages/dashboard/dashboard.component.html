@@ -7,7 +7,7 @@
                 <p class="modal-title">Log</p>
             </div>
             <div class="modal-contents">
-                <p class="modal-url">{{openedLog.url}}</p>
+                <p class="modal-url">{{openedLog.url}} <span class="modal-method"> {{openedLog.method}} </span></p>
                 <p class="modal-date">{{openedLog.dateAndTime}}</p>
                 <p class="modal-time-to-complete">{{openedLog.timeToComplete}}</p>
                 <div class="modal-log-info">
@@ -33,6 +33,7 @@
                             <div class="url-info">
                                 <p class="url-title">{{url.title}}</p>
                                 <p class="url-url">{{url.url}}</p>
+                                <p class="url-method">{{url.method}}</p>
                             </div>
                         </div>
                         <div class="url-topbar-right">

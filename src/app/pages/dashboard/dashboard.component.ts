@@ -26,6 +26,7 @@ export class DashboardComponent implements OnInit {
       "favicon" : "",
       "period": "5min",
       "favorites": false,
+      "method": "get",
       "logs" : [
         {
           "Id": "testId1",
@@ -68,6 +69,7 @@ export class DashboardComponent implements OnInit {
       "favicon" : "",
       "period": "5min",
       "favorites": true,
+      "method": "post",
       "logs" : [
         
       ]
@@ -78,6 +80,7 @@ export class DashboardComponent implements OnInit {
       "favicon" : "",
       "period": "5min",
       "favorites": false,
+      "method": "put",
       "logs" : [
         {
           "status": 300,
@@ -92,6 +95,7 @@ export class DashboardComponent implements OnInit {
       "favicon" : "",
       "period": "5min",
       "favorites": true,
+      "method": "delete",
       "logs" : [
         {
           "status": 400,
@@ -106,6 +110,7 @@ export class DashboardComponent implements OnInit {
       "favicon" : "",
       "period": "5min",
       "favorites": false,
+      "method": "put",
       "logs" : [
         {
           "status": 500,
@@ -135,6 +140,7 @@ export class DashboardComponent implements OnInit {
       for(let log of url.logs) {
         if(log.Id == id) {
           log.url = url.url;
+          log.method = url.method;
           this.openedLog = log;
         }
       }

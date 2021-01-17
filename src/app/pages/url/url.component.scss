@@ -1,94 +1,55 @@
 @import '../../../styles.scss';
 
-.columns {
-    width: 100%;
+.main-section{    
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 2rem 3rem;
+}
+.top-section{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.url {
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid #e7e7e7;
-    margin: 1rem;
-    padding: 1rem;
-}
-
-.url-topbar {
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
-    max-width: 100%;
 }
-
-.url-topbar-left {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    flex-direction: row;
-}
-
-.url-favicon {
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
-}
-
-.url-info {
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-    margin-left: 1rem;
-}
-
-.url-title {
+.url-title{
     font-family: $bold-font-family;
-    font-size: 1.2rem;
     color: $text-color-light-background;
+    font-size: 3rem;
 }
-
-.url-url {
-    font-family: $medium-font-family;
-    font-size: 0.9rem;
-    color: gray;
+.url-last-log{
+    font-family: $regular-font-family;
+    font-style: italic;
+}
+.url-url{
+    font-family: $bold-font-family;
+    font-size: 1rem;
+    color: grey;
+    text-transform: uppercase;
+}
+.url-method{
+    font-family: $bold-font-family;
+    font-size: 1rem;
+    color: $primary;
     text-transform: uppercase;
 }
 
-.url-topbar-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    * {
-        margin-left: 1rem;
-    }
-}
-
-.url-period {
+.url-method-body{
     font-family: $regular-font-family;
-    color: gray;
-    font-size: 0.8rem;
-    font-style: italic;
+    font-size: 1rem;
+    color: $text-color-light-background;
 }
 
-.url-star {
-    color: gray;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    &:focus {
-        outline: none;
-    }
-
+.sub-title{
+    font-family: $bold-font-family;
+    font-size: 1.75rem;
+    color: $text-color-light-background;
 }
 
+.method-params{
+    margin-top: 1.25rem;
+}
+
+// copied from dashboard.css
 .checked {
     color: #FFD700;
 }
@@ -99,7 +60,7 @@
 }
 
 .logs-section {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .logs-section-topbar {
@@ -110,7 +71,7 @@
 
 .logs-title {
     font-family: $bold-font-family;
-    font-size: 1rem;
+    font-size: 1.75rem;
     color: $text-color-light-background;
     margin-bottom: 1rem;
 }
@@ -120,7 +81,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    background-color: #fafafa;
+    background-color: white;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     margin: 0.75rem 0rem;
@@ -227,14 +188,6 @@
     font-family: $regular-font-family;
     font-size: 1rem;
     color: black;
-}
-
-.url-method{
-    font-family: $bold-font-family;
-    font-size: 1rem;
-    color: $primary;
-    text-transform: uppercase;
-    width: 50%;
 }
 
 .modal-method{
