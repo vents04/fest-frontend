@@ -5,16 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AddUrlComponent } from './pages/add-url/add-url.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    ProfileComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddUrlComponent
   ],
   imports: [
     BrowserModule,

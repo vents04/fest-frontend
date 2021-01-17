@@ -30,7 +30,7 @@ $medium-font-family: 'Metropolis SemiBold', sans-serif;
     background-color: $primary;
     font-family: $bold-font-family;
     font-size: 1rem;
-    padding: 0.25rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     color: $text-color-dark-background;
 
     &:hover {
@@ -79,4 +79,94 @@ $medium-font-family: 'Metropolis SemiBold', sans-serif;
     font-family: $regular-font-family;
     font-size: 0.9rem;
     color: gray;
+}
+
+.modal-card{
+    width: 25%;
+    height: min-content;
+    background-color: #fafafa;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+.modal-title{
+    font-family: 'Metropolis SemiBold', sans-serif;
+    font-size: 2rem;
+    color: black;
+    margin-top: 1rem;
+}
+.modal-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .close-button {
+        border: 1px solid #e7e7e7;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        font-size: 2rem;
+        color: $primary;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: none;
+        }
+        
+    }
+
+}
+.modal-card .actionButton{
+    margin-top: 1rem;
+    background-color: #4586ff;
+}
+
+.modal-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0rem;
+
+    * {
+        margin-top: 0.5rem;
+    }
+
+    .action-button {
+        margin-top: 2rem;
+    }
+
+    input {
+        font-family: $regular-font-family;
+        font-size: 1rem;
+        color: $text-color-light-background;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid #e7e7e7;
+        border-radius: 5px;
+
+        &:focus {
+            outline: none;
+        }
+
+    }
+
+    .input-description {
+        font-family: $medium-font-family;
+        font-size: 0.8rem;
+        color: gray;
+        text-transform: uppercase;
+    }
+
 }

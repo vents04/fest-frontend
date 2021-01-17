@@ -2,7 +2,7 @@
     <div class="navbar-topbar">
         <i class="material-icons navbar-icon navbar-menu-icon" (click)="showDropdown = !showDropdown">menu</i>
         <p class="navbar-logo">Nighthawk</p>
-        <i class="material-icons navbar-icon navbar-profile-icon" (click)="openComponent('profile')">account_circle</i>
+        <i class="material-icons navbar-icon navbar-profile-icon" (click)="openProfileModal()">account_circle</i>
     </div>
     <div class="navbar-dropdown" *ngIf="showDropdown">
         <p class="navbar-dropdown-item" [ngClass]="{'active-item' : selectedComponent == 'dashboard'}" (click)="openComponent('dashboard')">Home</p>
@@ -12,7 +12,23 @@
     <p class="navbar-logo">Nighthawk</p>
     <div class="navbar-menu-desktop">
         <p class="navbar-menu-item" [ngClass]="{'active-menu-item' : selectedComponent == 'dashboard'}" (click)="openComponent('dashboard')">Dashboard</p>
-        <i class="material-icons navbar-icon navbar-profile-icon" (click)="openComponent('profile')">account_circle</i>
+        <i class="material-icons navbar-icon navbar-profile-icon" (click)="openProfileModal()">account_circle</i>
+    </div>
+</div>
+<div class="modal" id="profile-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <div class="modal-section">
+            <i class="material-icons close-button" (click)="closeProfileModal()">cancel</i>
+            <p class="modal-title">Profile</p>
+        </div>
+        <div class="modal-contents">
+            <p class="input-description">Username</p>
+            <input type="text" value="{{username}}" #usernameEl/> 
+            <p class="input-description">Email</p>
+            <input type="text" value="{{email}}" #emailEl/> 
+            <button class="action-button" (click)="saveProfileChanges(usernameEl.value, emailEl.value)">Save changes</button>
+        </div>
     </div>
 </div>
 <router-outlet></router-outlet>
