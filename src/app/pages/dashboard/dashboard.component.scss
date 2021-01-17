@@ -197,3 +197,34 @@
     }
 
 }
+
+.modal-url {
+    font-family: $medium-font-family;
+    font-size: 0.9rem;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.modal-log-info-item {
+    font-family: $medium-font-family;
+    font-size: 1rem;
+    color: $text-color-light-background;
+}
+
+.modal-log-status-value {
+    font-family: $medium-font-family;
+    font-size: 1rem;
+    color: $text-color-light-background;
+}
+
+.modal-log-info-item-value{
+    font-family: $regular-font-family;
+    font-size: 1rem;
+    color: $text-color-light-background;
+}
+
+.modal-date {
+    font-family: $regular-font-family;
+    font-size: 1rem;
+    color: black;
+}

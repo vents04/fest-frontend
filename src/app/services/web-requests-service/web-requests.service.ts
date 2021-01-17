@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class WebRequestsService {
 
+  /*
   readonly ROOT_URL;
 
   constructor(private http: HttpClient) {
@@ -31,5 +32,6 @@ export class WebRequestsService {
   getMonitoredWebsites(sortRequest: string) {
     return this.http.get(`${this.ROOT_URL}/monitoredWebsites/read`, { observe: 'response', responseType: 'text'});
   }
+  */
 
 }
