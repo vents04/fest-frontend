@@ -1,0 +1,199 @@
+@import '../../../styles.scss';
+
+.columns {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.url {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #e7e7e7;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.url-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.url-topbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+}
+
+.url-favicon {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.url-info {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.url-title {
+    font-family: $bold-font-family;
+    font-size: 1.2rem;
+    color: $text-color-light-background;
+}
+
+.url-url {
+    font-family: $medium-font-family;
+    font-size: 0.9rem;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.url-topbar-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    * {
+        margin-left: 1rem;
+    }
+}
+
+.url-period {
+    font-family: $regular-font-family;
+    color: gray;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.url-star {
+    color: gray;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+}
+
+.checked {
+    color: #FFD700;
+}
+
+.scrollable-logs {
+    max-height: 175px;
+    overflow-y: scroll;
+}
+
+.logs-section {
+    margin-top: 2rem;
+}
+
+.logs-section-topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logs-title {
+    font-family: $bold-font-family;
+    font-size: 1rem;
+    color: $text-color-light-background;
+    margin-bottom: 1rem;
+}
+
+.log {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #fafafa;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 0.75rem 0rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+}
+
+.log:first-of-type {
+    margin-top: 0rem !important;
+}
+
+.log-right {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.log-status {
+    font-family: $bold-font-family;
+    font-size: 1rem;
+}
+
+.log-status-1 {
+    color: gray;
+}
+
+.log-status-2{
+    color: #4BB543;
+}
+
+.log-status-3 {
+    color: #0881a3;
+}
+
+.log-status-4 {
+    color: #ea9215;
+}
+
+.log-status-5 {
+    color: #cf3333;
+}
+
+.log-text {
+    font-family: $medium-font-family;
+    color: $text-color-light-background;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+.log-date {
+    font-family: $regular-font-family;
+    color: gray;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.url-edit {
+    color: $primary;
+    font-family: $bold-font-family;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+}
