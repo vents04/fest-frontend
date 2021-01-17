@@ -31,7 +31,7 @@ export class AuthService {
     return this.http.post(`${this.ROOT_URL}/user/create/login`, { email, password }, { observe: 'response', responseType: 'text' }).pipe(
       shareReplay(), tap((res: HttpResponse<any>) => {
         // Set token
-        let token = res.headers.get('x-auth-token');
+        let token = res.body;
         this.setToken(token != null ? token : "NoTokenFound");
       })
     );
@@ -41,7 +41,7 @@ export class AuthService {
     return this.http.post(`${this.ROOT_URL}/user/create/signup`, { name, email, password }, { observe: 'response', responseType: 'text' }).pipe(
       shareReplay(), tap((res: HttpResponse<any>) => {
         // Set token
-        let token = res.headers.get('x-auth-token');
+        let token = res.body;
         this.setToken(token != null ? token : "NoTokenFound");
       })
     );

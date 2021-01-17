@@ -28,4 +28,8 @@ export class WebRequestsService {
     return this.http.delete(`${this.ROOT_URL}/${url}`);
   }
 
+  getMonitoredWebsites(sortRequest: string) {
+    return this.http.get(`${this.ROOT_URL}/monitoredWebsites/read`, { observe: 'response', responseType: 'text'});
+  }
+
 }
